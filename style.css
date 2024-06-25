@@ -1,0 +1,346 @@
+/* reset */
+/* 1. Use a more-intuitive box-sizing model.*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /* 2. Remove default margin  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 5. Improve media defaults  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /* 6. Remove built-in form typography styles  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /* 7. Avoid text overflows  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /* 8. Create a root stacking context  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+
+:root{
+
+--White: hsl(0, 0%, 100%);
+--Light-pink: hsl(275, 100%, 97%);
+--Grayish-purple: hsl(292, 16%, 49%);
+--Dark-purple: hsl(292, 42%, 14%);
+
+
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100 900;
+    font-style: normal;
+  
+
+}
+
+/* mobile version */
+.wrapper{
+    /* border: 6px solid green; */
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+
+    margin: -8rem 0rem 0rem 0rem;
+    /* min-height: 100vh; */
+
+    /* 25.06.24 overlapping in grid */
+    /* grid-column: 2 / 4; */
+}
+
+.backgrn-pic{
+    /* border: 3px solid orangered; */
+    background-color: var(--Light-pink);
+
+    /* 25.06.24 trying overlapping  */
+    /* display: grid; */
+    /* grid-template-columns: repeat(4,1fr); */
+    /* grid-template-rows: repeat(3,1fr); */
+    /* gap: 1rem; */
+    
+}
+
+/* 25.06.24 trying overlapping  */
+.background-pic{
+  width: 100%;
+  grid-column: 1 / -1;
+  z-index: -1;
+
+}
+.background-pic img{
+  width: 100%;
+}
+
+.center-wrapper{
+    /* position: absolute; */
+    
+    padding: 1rem;
+    background-color: var(--White);
+    border: 3px solid black;
+    border-radius: 0.5rem;
+
+    display: grid;
+    place-content: center;
+    max-width: 28.125rem;
+    
+}
+.top-content{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    gap: 1.5rem;
+}
+.top-content img{
+    width: 1.5rem;
+}
+.top-content h1{
+    color: var(--Dark-purple);
+}
+.flex-items{
+    border: 1px solid brown;
+    border-bottom: 10px solid black;
+    display: grid;
+    place-content: center;
+    padding: 1rem 0rem;
+    /* z-index: -1; */
+    /* align-items: center; */
+    /* justify-content: start; */
+    gap: 1rem;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.flex-items:last-of-type{
+    border-bottom: none;
+}
+
+
+.flex-layout-ques{
+    border: 1px solid green;
+    /* max-width: 14rem;   correct width */
+    padding: 1rem 0rem;
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.flex-layout-ans{
+    border: 1px solid blue;
+}
+.answer{
+    color: var(--Grayish-purple);
+    line-height: 1.5;
+}
+.questions{
+    font-weight: 600;
+    color: var(--Dark-purple);
+}
+
+
+/* desktop version */
+@media (min-width:600px) {
+    .center-wrapper{
+        
+        position: relative;
+        z-index: 2;
+        
+    }
+    .title{
+      font-size: 3.75rem;
+    }
+    .top-content img{
+      width: 2.25rem;
+  }
+  .backgrn-pic{
+        /* 25.06.24 trying overlapping  */
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: repeat(4,1fr);
+        /* grid-template-rows: repeat(3,1fr); */
+        gap: 1rem;
+  }
+  .wrapper{
+        /* 25.06.24 overlapping in grid */
+        grid-column: 2 / 4;
+        max-width: 53rem;
+        width: 100%;
+  }
+  /* 25.06.24 trying overlapping  */
+  .background-pic{
+  width: 100%;
+  grid-column: 1 / -1;
+  
+  position: absolute;
+  z-index: 1;
+
+  }
+  .background-pic img{
+    width: 100%;
+  }
+}
+
+/* ipad mini */
+
+
+@media (min-width:768px) {
+  .center-wrapper{
+      
+      position: relative;
+      z-index: 2;
+      
+  }
+  .title{
+    font-size: 3.75rem;
+  }
+  .top-content img{
+    width: 2.25rem;
+}
+.backgrn-pic{
+      /* 25.06.24 trying overlapping  */
+      display: grid;
+      min-height: 100vh;
+      grid-template-columns: repeat(4,1fr);
+      /* grid-template-rows: repeat(3,1fr); */
+      gap: 1rem;
+}
+.wrapper{
+      /* 25.06.24 overlapping in grid */
+      grid-column: 2 / 4;
+      max-width: 53rem;
+      
+      padding: 12rem 0 0 0;
+}
+/* 25.06.24 trying overlapping  */s
+.background-pic{
+width: 100%;
+grid-column: 1 / -1;
+
+position: absolute;
+z-index: 1;
+
+}
+.background-pic img{
+  width: 100%;
+}
+}
+
+
+
+
+
+/* 1024 desktop */
+
+@media (min-width:800px) {
+  .center-wrapper{
+      
+      position: relative;
+      z-index: 2;
+      
+  }
+  .title{
+    font-size: 3.75rem;
+  }
+  .top-content img{
+    width: 2.25rem;
+}
+.backgrn-pic{
+      /* 25.06.24 trying overlapping  */
+      display: grid;
+      align-items: start;
+      /* min-height: 100vh; */
+      grid-template-columns: repeat(4,1fr);
+      /* grid-template-rows: repeat(3,1fr); */
+      gap: 1rem;
+}
+.wrapper{
+      /* 25.06.24 overlapping in grid */
+      grid-column: 2 / 4;
+      max-width: 53rem;
+      /* width: 100%; */
+      
+}
+/* 25.06.24 trying overlapping  */s
+.background-pic{
+width: 100%;
+grid-column: 1 / -1;
+
+position: absolute;
+z-index: 1;
+
+}
+.background-pic img{
+  width: 100%;
+}
+}
+
+
+
+
+
+@media (min-width:2000px) {
+  .center-wrapper{
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      
+  }
+  .title{
+    font-size: 3.75rem;
+  }
+  .top-content img{
+    width: 2.25rem;
+}
+.backgrn-pic{
+      /* 25.06.24 trying overlapping  */
+      display: grid;
+      min-height: 100vh;
+      grid-template-columns: repeat(4,1fr);
+      /* grid-template-rows: repeat(3,1fr); */
+      gap: 1rem;
+}
+.wrapper{
+      /* 25.06.24 overlapping in grid */
+      grid-column: 2 / 4;
+      
+      padding: 26rem 0 0 0;
+}
+/* 25.06.24 trying overlapping  */s
+.background-pic{
+width: 100%;
+grid-column: 1 / -1;
+
+
+position: absolute;
+z-index: 1;
+
+}
+.background-pic img{
+  width: 100%;
+}
+}
+
+
+/* footer */
+  .attribution { font-size: 11px; text-align: center; }
+  .attribution a { color: hsl(228, 45%, 44%); }
