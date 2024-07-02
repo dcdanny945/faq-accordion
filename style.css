@@ -55,13 +55,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 
-/* To add on */
-/* mouse hover color change*/
-/* couser:pointer  on questions*/
-
-
-
-
 
 /* mobile version */
 
@@ -160,6 +153,10 @@ width: 100%;
 .questions{
   font-weight: 600;
   color: var(--Dark-purple);
+  cursor: pointer;
+}
+.questions:hover{
+  color: var(--Grayish-purple);
 }
 
 
@@ -175,7 +172,7 @@ width: 100%;
     margin: 2rem 1rem 0 1rem;
     position: relative;
     z-index: 2;
-    max-width: 60rem;
+    max-width: 38rem;
     padding: 2rem;
       
   }
@@ -220,7 +217,7 @@ z-index: 1;
   margin: 4rem 1rem 0 1rem;
   position: relative;
   z-index: 2;
-  max-width: 60rem;
+  max-width: 38rem;
   padding: 2rem;
     
 }
@@ -263,10 +260,10 @@ width: 100%;
 
 @media (min-width:800px) {
 .center-wrapper{
-  margin: 4rem 1rem 0 1rem;
+  margin: 8rem 1rem 0 1rem;
   position: relative;
   z-index: 2;
-  max-width: 60rem;
+  max-width: 38rem;
   padding: 2rem;
 }
 .title{
