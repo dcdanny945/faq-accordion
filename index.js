@@ -1,33 +1,72 @@
-const btn = document.querySelectorAll(`.questions`);
 
+// making btn
+const q = document.querySelectorAll(`.question`);
 
-btn.forEach((makingBtn)=>{
-   makingBtn.addEventListener(`click`, (e)=>{
-      toggle(e)
-   })
+// making As to toggle
+const a = document.querySelectorAll(`.answer`);
+
+// As into btns
+a.forEach((btn)=>{
+    btn.addEventListener(`click`, answerToggle);
 })
 
+function answerToggle(e){
+    e.preventDefault();
+    const clickedA = e.target;
+    // const swapping = clickedA.parentElement;
 
-function toggle(e){
+    // console.log(swapping);
+    
+    if(clickedA){
+        clickedA.classList.toggle(`collapse`);
+        const clickedAChangeIcon = clickedA.parentElement.firstElementChild.firstElementChild;
+        console.log(clickedAChangeIcon)
 
- const clickedElement = e.target;
- const selectedQ = clickedElement.parentElement.id;
- const selectedA = document.querySelector(`.answer-${selectedQ}`);
+        if (clickedAChangeIcon.src.includes(`/images/icon-plus.svg`)){
+            clickedAChangeIcon.src = `./assets/images/icon-minus.svg`;
+        }else{
+            clickedAChangeIcon.src = `./assets/images/icon-plus.svg `;
+        }
 
- selectedA.classList.toggle(`open`);
-
-   const nextElement = clickedElement.nextElementSibling;
-   
-   const currentSrc = nextElement.src;   
-
-
-      if(currentSrc.includes(`icon-minus.svg`)){     
-         nextElement.src = `./assets/images/icon-plus.svg`;
-      } else if(currentSrc.includes(`icon-plus.svg`)){  
-         nextElement.src = `./assets/images/icon-minus.svg`;
-      }
-      
-   
+    }
 }
+
+
+
+// Qs into btns
+q.forEach((btn)=>{
+    btn.addEventListener(`click`, togggle);
+})
+
+function togggle(e){
+    e.preventDefault();
+    
+    const clickedQ = e.target;
+    
+    
+    if(clickedQ){
+        const nexElement  = clickedQ.nextElementSibling;
+        
+        nexElement.classList.toggle(`collapse`);
+
+        const qIcon = clickedQ.querySelector(`img`);
+        if (qIcon.src.includes(`/images/icon-plus.svg`)){
+            qIcon.src = `./assets/images/icon-minus.svg`;
+            
+        }else{
+            qIcon.src = `./assets/images/icon-plus.svg`;
+        }
+
+        // console.log(qIcon);
+    }
+}
+
+
+
+
+
+
+
+
 
 
